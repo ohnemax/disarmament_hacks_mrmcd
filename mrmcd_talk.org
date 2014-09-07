@@ -16,7 +16,6 @@
 #+LATEX_HEADER: \usepackage{animate}
 #+LATEX_HEADER: \usepackage{listings}
 #+LATEX_HEADER: \usepackage{ulem}
-# #+LATEX_HEADER: \newcommand\reduline{\bgroup\markoverwith{\textcolor{red}{\rule[0.5ex]{2pt}{2pt}}}\ULon}
 #+LATEX_HEADER: \makeatletter
 #+LATEX_HEADER: \def\s@out@end{\relax\relax\relax}
 #+LATEX_HEADER: \def\s@out#1\s@out@end{\sout{#1}}
@@ -45,7 +44,7 @@
    :END:
 #+BEGIN_LaTeX
 \begin{center}
-\makestrikeout<2>{How to build a nuclear weapon?}\\[1em]
+\makestrikeout<2>{How to build a nuclear weapon?\\[1em]}
 \only<2>{What do we need to know to disarm a nuclear weapon?}
 \end{center}
 #+END_LaTeX
@@ -74,7 +73,7 @@
     :BEAMER_col: 0.45
     :END:
 
-    Fission of heavy elements produces large amount of energy:
+    Fission of heavy elements produces large amount of energy (200 MeV):
     
 #+BEAMER: \begin{varblock}[\textwidth]{}
     \includegraphics[width=0.95\textwidth]{images/Kernspaltung}
@@ -902,11 +901,11 @@ M. Göttsche and G. Kirchner. "Measurement Techniques for Warhead Authentication
 #+BEAMER: \end{center}
 ** Basics
 *** Cryptographic protocol
-    - Proof a particular fact
-    - Sound & Complete
+    - proof a particular fact
+    - sound & complete
     - without revealing more knowledge
     
-    Required: *Interaction* between parties
+    Required: *Interaction* between parties.
 
 ** Distinguishing Drinks
 #+BEAMER: \begin{center}
@@ -1015,7 +1014,12 @@ Proof that templates are equal without revealing anything else\\[0.5em]
      :PROPERTIES:
      :BEAMER_col: 0.48
      :END:
-\footnotesize Host preloads detectors with "negative image". \normalsize
+
+ \fontsize{8pt}{9.6}\selectfont
+
+Parties agree on total count \\ (e.g. 200). \\ Host preloads detectors with "negative image". 
+
+\normalsize
 
 **** Right							      :BMCOL:
      :PROPERTIES:
@@ -1038,7 +1042,12 @@ Proof that templates are equal without revealing anything else\\[0.5em]
      :PROPERTIES:
      :BEAMER_col: 0.48
      :END:
-\footnotesize Inspector does not know preload and places detectors randomly. \normalsize
+
+ \fontsize{8pt}{9.6}\selectfont
+
+Inspector does not know preload and places detectors randomly \\ (but A to A / B to B). 
+
+\normalsize
 
 **** Right							      :BMCOL:
      :PROPERTIES:

@@ -1,4 +1,4 @@
-% Created 2014-09-07 So 11:04
+% Created 2014-09-07 So 12:29
 \documentclass[presentation]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -60,7 +60,7 @@ MRMCD, \insertdate\\[0.5em]
 \label{sec-1}
 \begin{frame}[label=sec-1-1]{}
 \begin{center}
-\makestrikeout<2>{How to build a nuclear weapon?}\\[1em]
+\makestrikeout<2>{How to build a nuclear weapon?\\[1em]}
 \only<2>{What do we need to know to disarm a nuclear weapon?}
 \end{center}
 \end{frame}
@@ -85,7 +85,7 @@ Energy produced by reactions of atomic nucleus.
 
 \begin{column}{0.45\textwidth}
 
-Fission of heavy elements produces large amount of energy:
+Fission of heavy elements produces large amount of energy (200 MeV):
 
 \begin{varblock}[\textwidth]{}
 \includegraphics[width=0.95\textwidth]{images/Kernspaltung}
@@ -775,12 +775,12 @@ Hack 3: Zero-Knowledge Protocol
 \begin{frame}[label=sec-5-2]{Basics}
 \begin{block}{Cryptographic protocol}
 \begin{itemize}
-\item Proof a particular fact
-\item Sound \& Complete
+\item proof a particular fact
+\item sound \& complete
 \item without revealing more knowledge
 \end{itemize}
 
-Required: \alert{Interaction} between parties
+Required: \alert{Interaction} between parties.
 \end{block}
 \end{frame}
 
@@ -875,7 +875,12 @@ Proof that templates are equal without revealing anything else\\[0.5em]
 
 \begin{columns}
 \begin{column}{0.48\textwidth}
-\footnotesize Host preloads detectors with "negative image". \normalsize
+
+\fontsize{8pt}{9.6}\selectfont
+
+Parties agree on total count \\ (e.g. 200). \\ Host preloads detectors with "negative image". 
+
+\normalsize
 \end{column}
 
 \begin{column}{0.48\textwidth}
@@ -894,7 +899,12 @@ Proof that templates are equal without revealing anything else\\[0.5em]
 
 \begin{columns}
 \begin{column}{0.48\textwidth}
-\footnotesize Inspector does not know preload and places detectors randomly. \normalsize
+
+\fontsize{8pt}{9.6}\selectfont
+
+Inspector does not know preload and places detectors randomly \\ (but A to A / B to B). 
+
+\normalsize
 \end{column}
 
 \begin{column}{0.48\textwidth}
