@@ -1,0 +1,1405 @@
+#+startup: beamer
+#+TITLE:     Nuclear Disarmament - Hacks for a world free of nuclear weapons?
+#+AUTHOR:    Moritz Kütt
+#+DATE:      September 2014
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: DarkBeamer
+#+LATEX_HEADER: \renewcommand{\maketitle}{\begin{frame}\begin{center}\Large
+#+LATEX_HEADER: \vspace{1.5cm}
+#+LATEX_HEADER: Nuclear Disarmament - Hacks\\ for a world free of nuclear weapons?\\[0.5em]\small\insertauthor\\[1em]\tiny moritz@nuclearfreesoftware.org\\[1em]
+#+LATEX_HEADER: MRMCD, \insertdate\\[0.5em]
+#+LATEX_HEADER: \vspace{1.8cm} \includegraphics[width=1.5cm]{by-nc-sa_eu.png}\\\fontsize{5pt}{6}\selectfont \textcolor{gray!85}{This work is licensed under the\\ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.\\ To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.}
+#+LATEX_HEADER: \end{center}\end{frame}}
+#+LATEX_HEADER: \usepackage{ctable}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{animate}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{ulem}
+# #+LATEX_HEADER: \newcommand\reduline{\bgroup\markoverwith{\textcolor{red}{\rule[0.5ex]{2pt}{2pt}}}\ULon}
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \def\s@out@end{\relax\relax\relax}
+#+LATEX_HEADER: \def\s@out#1\s@out@end{\sout{#1}}
+#+LATEX_HEADER: \def\makestrikeout<#1>#2{\only<#1>{\s@out}#2\s@out@end}
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \newbox\@backgroundblock
+#+LATEX_HEADER: \newenvironment{backgroundblock}[2]{%
+#+LATEX_HEADER:   \global\setbox\@backgroundblock=\vbox\bgroup%
+#+LATEX_HEADER:     \unvbox\@backgroundblock%
+#+LATEX_HEADER:     \vbox to0pt\bgroup\vskip#2\hbox to0pt\bgroup\hskip#1\relax%
+#+LATEX_HEADER: }{\egroup\egroup\egroup}
+#+LATEX_HEADER: \addtobeamertemplate{background}{\box\@backgroundblock}{}
+#+LATEX_HEADER: \makeatother
+#+LateX_HEADER: \newcolumntype{L}{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
+#+LateX_HEADER: \newcolumntype{R}{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}X}
+#+LATEX_HEADER: \newcommand\imagesource[1]{\tiny #1}
+#+LATEX_HEADER: \newenvironment{newcolbox}[2]{\begin{tcolorbox}[tcbeamer,notitle,colback=#1,colupper=black] \includegraphics[width=\textwidth]{people/#2.png}\centering\tiny}{\end{tcolorbox}\vskip}
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+OPTIONS:   H:2 num:t toc:\nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+
+* Nuclear Weapons 101
+** Nuclear Weapons 101						:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+#+BEGIN_LaTeX
+\begin{center}
+\makestrikeout<2>{How to build a nuclear weapon?}\\[1em]
+\only<2>{What do we need to know to disarm a nuclear weapon?}
+\end{center}
+#+END_LaTeX
+   
+** Basic principle
+   :PROPERTIES:
+   :END:
+*** left							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+    Energy produced by reactions of atomic nucleus.
+
+#+BEAMER: \begin{varblock}[\textwidth]{}
+#+BEAMER: \includegraphics[width=0.1\textwidth]{images/proton} ~ Proton \\[0.5em]
+#+BEAMER: \includegraphics[width=0.1\textwidth]{images/neutron} ~ Neutron 
+#+BEAMER: \end{varblock}
+
+    \footnotesize
+
+    - Elements :: Depend on proton number
+    - Isotopes :: Different neutron numbers for particular proton number 
+
+*** right							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+
+    Fission of heavy elements produces large amount of energy:
+    
+#+BEAMER: \begin{varblock}[\textwidth]{}
+    \includegraphics[width=0.95\textwidth]{images/Kernspaltung}
+#+BEAMER: \end{varblock}
+    \vspace{-0.4cm}
+     \tiny \textcolor{gray}{CC-BY-SA - Stefan-Xp}
+
+     \normalsize
+    C-oxidation: several eV
+
+
+
+
+** Nuclear Chain Reaction
+*** left							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+
+    Initial fission leading to exponential growth of fissions.
+
+**** Critical Mass						    :B_block:
+     :PROPERTIES:
+     :BEAMER_env: block
+     :END:
+     Minimal amount of material needed for which chain reaction is possible.\\
+
+**** No Head						    :B_ignoreheading:
+     :PROPERTIES:
+     :BEAMER_env: ignoreheading
+     :END:
+     Smaller amount: more neutrons lost by absorption / escape.
+
+*** right 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+
+#+BEAMER: \begin{varblock}[0.9 \textwidth]{}
+    \includegraphics[width=\textwidth]{images/Kettenreaktion}
+#+BEAMER: \end{varblock}
+
+#+BEGIN_LaTeX
+\begin{tikzpicture}[remember picture, overlay]
+\node [shift={(5.5cm, -2.2cm)},rotate = 90] at (current page.center) {\tiny \textcolor{gray}{CC-BY-SA - Wikimedia Commons}};
+\end{tikzpicture}
+#+END_LaTeX
+
+** Fissile Material
+#+BEAMER: \begin{center}
+   for weapon purposes do not occur naturally
+#+BEAMER: \end{center}
+
+*** cols							  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :BEAMER_opt: t
+    :END:
+**** Highly Enriched Uranium 				      :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: block
+    :END:
+    \small
+    Protons: 92\\
+    Neutrons: 235/238\\[1em]
+
+    Natural uranium: 0.7% U-235\\
+    For weapons: $>$ 90% U-235 needed\\[0.5em]
+    
+    U-235 fraction can be increased by *enrichment*.\\[0.8em]
+
+    \textcolor{gray}{Highly Enriched Uranium =  HEU}
+
+
+**** Plutonium 						      :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :BEAMER_env: block
+    :END:
+    \small Protons: 94\\
+    Neutrons: 239 (240/241/...)\\[1em]
+
+
+   Plutonium produced in any nuclear reactor.\\[0.5em]
+
+   It needs to be separated from spent fuel by *reprocessing*.
+
+** Weapon Principles
+\vspace{-0.7cm}
+*** Cols							  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :BEAMER_opt: t
+    :END:
+**** Gun Type						      :B_block:BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.45
+     :BEAMER_env: block
+     :END:
+
+    \includegraphics[width=\textwidth]{images/guntype_modified}
+    
+**** Implosion						      :B_block:BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.45
+     :BEAMER_env: block
+     :END:
+     \includegraphics[width=\textwidth]{images/implosion_modified}
+
+*** License Cols						  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :END:
+**** Gun Type							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.45
+     :END:
+     \tiny \textcolor{gray}{Public Domain - Wikimedia Commons (Modified)}
+
+**** Implosion							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.45
+     :END:
+     \tiny \textcolor{gray}{Public Domain - Wikimedia Commons (Modified)}
+
+   
+** Massive Explosive Power
+
+*** Left							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.58
+    :END:
+\vspace{-0.5cm}
+#+BEAMER: \begin{center}
+Approx. 2000 nuclear weapons were exploded during nuclear testing.\\[1em]
+
+Total yield (explosive power) of all tested weapons: \\
+510 million tons TNT equivalent
+
+#+BEAMER:    \fontsize{3pt}{3.6}\selectfont \textcolor{gray}{R.S. Norris and W.M. Arkin, NRDC Nuclear Notebook - Known Nuclear Tests Worldwide, 1945--1998, \emph{Bulletin of the Atomic Scientists}, 1998, 1, 2003}\\[1em]
+
+#+BEAMER: \normalsize
+
+\pause
+Can you imagine\\ 510.000.000.000 kg \\ of TNT?\\[1em]
+
+\pause
+
+#+BEAMER: \end{center}
+
+*** Right							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.38
+    :END:
+
+#+BEGIN_LATEX
+\vspace{-0.8cm}
+
+\begin{center}
+1.000 kg did this...
+\end{center}
+
+\vspace{-0.85cm}
+
+\begin{varblock}[0.95\textwidth]{}
+\includegraphics[width=\textwidth]{images/140202_Afe-Tower_Blasting.jpg}
+\end{varblock}
+#+END_LATEX
+\vspace{-0.3cm}
+\tiny \textcolor{gray}{CC-BY-SA Sajak}
+
+** Nuclear Winter						:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+
+#+BEGIN_LaTeX
+\begin{backgroundblock}{10mm}{10mm}
+%\begin{varblock}[\textwidth]{}
+  \includegraphics[width=\textwidth]{images/Fig5SummerTempMap_modified.jpg}
+%\end{varblock}%
+\end{backgroundblock}%
+#+END_LaTeX   
+
+
+*** Left Col							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+#+BEAMER: \vspace{8.3cm}
+
+#+BEAMER: \hspace{0.5cm} \tiny \textcolor{gray}{CC-BY-SA-NC Robock et. al 2007, Fig. 5}%
+
+*** Right Col							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+\vspace{2.5cm}
+
+**** Nuclear Winter						    :B_block:
+     :PROPERTIES:
+     :BEAMER_env: block
+     :END:
+    \footnotesize Temperature change resulting from regional nuclear war (100 warheads).
+
+*** Ignore						    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+** Global Warhead stockpiles
+
+#+BEAMER: \begin{varblock}[\textwidth]{}
+    \includegraphics[width=\textwidth]{images/all_countries}
+#+BEAMER: \end{varblock}
+
+#+BEAMER: \vspace{-0.4cm} 
+#+BEAMER: \fontsize{3pt}{3.6}\selectfont \textcolor{gray}{Image created with data from: Kristensen, H. M. and Norris, R. S. Global nuclear weapons inventories, 1945-2013 Bulletin of the Atomic Scientists, SAGE Publications, 2013, 69, 75–81}
+
+#+BEAMER: \normalsize
+
+** Germany
+\vspace{-0.5cm}
+#+BEAMER: \begin{center}
+Nuclear Weapons in Germany?\\[0.7em]
+\pause
+U.S. nuclear weapons stationed as part of "NATO nuclear sharing"
+#+BEAMER: \end{center}
+
+\vspace{-0.3cm}
+*** Cols							  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :BEAMER_opt: t
+    :END:
+**** approx. 20 stored at Büchel			      :B_block:BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :BEAMER_env: block
+     :END:
+     \includegraphics[width=\textwidth]{images/Buechel_Fliegerhorst.jpg}
+
+**** B61 warheads					      :B_block:BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :BEAMER_env: block
+     :END:
+
+     \vspace{0.2cm}
+
+     \includegraphics[width=\textwidth]{images/B-61_bomb_rack.jpg}
+
+*** New Columns 						  :B_columns:
+     :PROPERTIES:
+     :BEAMER_env: columns
+     :END:
+**** Büchel reference 						      :BMCOL:
+      :PROPERTIES:
+      :BEAMER_col: 0.48
+      :END:
+      \tiny \textcolor{gray}{CC-BY-SA Stahlkocher}
+
+**** B61 reference 						      :BMCOL:
+      :PROPERTIES:
+      :BEAMER_col: 0.48
+      :END:
+      \tiny \textcolor{gray}{Public Domain, U.S. DoD}
+
+
+* Disarmament
+** Present Arms Control
+*** Cols							  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :BEAMER_opt: t
+    :END:
+
+**** Non-Proliferation Treaty				      :B_block:BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :BEAMER_env: block
+     :END:
+     Entered into force in 1970
+
+     Defines *Nuclear Weapon States* and *Non-Nuclear Weapon States*
+    
+     Prohibits development of nuclear weapons for latter.
+
+**** Right							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :END:
+
+     \vspace{0.1cm}
+
+     Partial Test Ban Treaty:\\
+     Bans nuclear weapon testing in atmosphere, under water and on surface.\\[1.2em]
+
+     Several other smaller treaties exist, often only bilateral between Russia and the United States.
+
+** Future Regulation
+***   Comprehensive Test Ban Treaty (CTBT)
+      Banning all testing, including underground testing.\\
+      International Monitoring System already in place *and working*\\
+      (e.g. North Korea).
+
+
+***   Fissile Material Cut-off treaty
+
+      Ban production of weapon-usable fissile material.
+
+
+***   Disarmament Treaty
+      
+      Not yet discussed!
+      
+      Nuclear Weapons Convention / Ban-Treaty / ...?
+
+** Technical Problems Unsolved					:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+   
+#+BEAMER: \begin{center}
+   Independent of political solutions: \\[0.3em]
+   \Large
+   There are\\ many technical problems and challenges\\ without a solution.\\[1em]
+   
+   \pause
+
+   Complicated task - Help from every community needed!
+#+BEAMER: \end{center}
+
+** Disarmament Verification
+   
+#+BEAMER: \begin{varblock}[\textwidth]{}
+   \centering
+   Process of warhead dismantlement\\[0.7em]
+    \includegraphics[width=\textwidth]{images/warhead_dismantlement}
+#+BEAMER: \end{varblock}
+
+#+BEGIN_LaTeX
+\begin{tikzpicture}[remember picture, overlay]
+\node [shift={(5.7cm, 0.8cm)},rotate = 90] at (current page.center) {\tiny \textcolor{gray}{CC-BY-SA - IPFM}};
+\end{tikzpicture}
+#+END_LaTeX
+
+*** Verification
+#+BEAMER: \begin{center}
+    Carried out to have high confidence in number / location\\ of dismantled warheads.
+
+    Should include participation of non-nuclear weapon states.
+#+BEAMER: \end{center}
+
+** Verification Goal
+#+BEAMER: \begin{center}   
+   Is there a bomb in the box?
+#+BEAMER: \end{center}
+
+*** Bomb in the box 					    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+**** Host Box							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.18
+     :END:
+     \includegraphics[width=\textwidth]{images/ib/box_visible}
+**** Host							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.28
+     :END:
+     \small
+     Host Party (Host) owns weapon ready for dismantlement, or spoof.
+
+**** Box							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.18
+     :END:
+     \includegraphics[width=\textwidth]{images/ib/box_transparent}
+**** Inspector							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.28
+     :END:
+     \small
+     Inspecting Party (Inspector) needs to verify weapon / spoof without opening the box.
+
+
+*** Space / Head					    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    \vfill
+    Two Approaches:
+*** Template vs Attribute					  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :END:
+
+**** Template Approach					      :B_block:BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :BEAMER_env: block
+     :END:
+     \small
+     Items are compared to "Golden Sample", which identity is proved by other means.
+
+**** Attribute Approach					      :B_block:BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :BEAMER_env: block
+     :END:
+     \small
+     Items are checked for particular attributes (e.g. presence/mass of fissile material).
+
+** Further Complication
+   :PROPERTIES:
+   :END:
+
+Adherance to existing regulation in the Non-Proliferation Treaty required:
+
+*** Art. I							    :B_quote:
+    :PROPERTIES:
+    :BEAMER_env: quote
+    :END:
+\small
+Article I\\
+Each nuclear-weapon State Party to the Treaty undertakes [...] not in any way to assist, encourage, or induce any non-nuclear-weapon State to manufacture or otherwise acquire nuclear weapons or other nuclear explosive devices, or control over such weapons or explosive devices.
+
+*** Art. II						   :B_quote:noexport:
+    :PROPERTIES:
+    :BEAMER_env: quote
+    :END:
+\small
+Article II\\
+Each non-nuclear-weapon State Party to the Treaty undertakes [...] not to seek or receive any assistance in the manufacture of nuclear weapons or other nuclear explosive devices.
+
+*** No Heading						    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+In addition, states claim information sensitivity / classification because of national security interests.
+
+
+
+* Free Software
+** Hack 1: Free Software					:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+#+BEAMER: \begin{center}
+   Hack 1: Free Software
+#+BEAMER: \end{center}
+
+** Software is used frequently					:B_fullframe:
+    :PROPERTIES:
+    :BEAMER_env: fullframe
+    :END:
+
+#+BEAMER: \begin{center}
+\Large
+
+Software is used\\
+to develop new measurement technologies\\
+and during implementation of disarmament verification\\[1.5em]
+
+\color{gray!50}{\small (also needs hardware and institutional arrangements...)}
+#+BEAMER: \end{center}
+
+
+** Neutron Multiplicity Measurements
+   :PROPERTIES:
+   :END:
+
+   #+BEGIN_LaTeX
+\begin{tikzpicture}[remember picture,overlay]
+    {{\uncover<1->{\node [shift={(-1.7cm,0.8cm)}, line width=1mm, draw=black, inner sep=0pt] at (current page.center) {\includegraphics[width=8cm]{images/nms/detector}};}}};
+    {{\uncover<2->{\node [shift={(0cm,-1.9cm)}, line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=11cm]{images/nms/pulsetrain_title}};}}};
+    {{\uncover<3->{\node [shift={(4cm,0.5cm)}, line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=4cm]{images/nms/math_2}};}}};
+\end{tikzpicture}
+#+END_LaTeX
+
+
+** Problem
+   :PROPERTIES:
+   :END:
+
+*** Currently used software often suffers from 		       :B_alertblock:
+    :PROPERTIES:
+    :BEAMER_env: alertblock
+    :BEAMER_act: <1->
+    :END:
+    Difficulties for software verification (no source code access)\\[0.35em]
+    Limited application and development (“expert communties”)\\[0.35em]
+    Limited access (export controls)\\[0.35em]
+    (High) financial requirements\\[0.35em]
+
+*** How to establish trust... 					    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_act: <2->
+    :END:
+    if software is used as tools for decision making?\\[0.5em]
+    if states rely on results of software?
+
+
+
+** A Solution							:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :BEAMER_args: t
+   :END:
+
+#+BEAMER: \begin{center}\Large   
+    Free Software criteria for software in Nuclear Arms Control!
+#+BEAMER: \end{center}
+
+*** Three Criteria derived from Free Software / Open Source  :B_exampleblock:
+    :PROPERTIES:
+    :BEAMER_env: exampleblock
+    :END:
+    (1) No restrictions for access to program.
+
+    (2) Distribution of program must include full source code.
+
+    (3) Modifications of the program are allowed to anybody.
+
+*** Space						    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    \hfill
+    \hfill
+
+
+*** Free							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+
+#+BEGIN_LaTeX
+\begin{varblock}[\textwidth]{}
+\begin{minipage}[c]{0.5\linewidth}
+\includegraphics[width=0.9\textwidth]{images/fsf-only}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.5\linewidth}
+\includegraphics[width=0.9\textwidth]{images/NicoBZH_-_Richard_Stallman_(by-sa)_(5).jpg}
+\end{minipage}
+\end{varblock}
+\vspace{-0.6cm}
+\begin{minipage}[c]{0.5\linewidth}
+    \tiny \textcolor{gray}{Public Domain}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.5\linewidth}
+\tiny \textcolor{gray}{CC-BY-SA NicoBZH}
+\end{minipage}
+\vspace{-0.2cm}
+#+END_LaTeX
+
+*** Open 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.45
+     :END:
+#+BEGIN_LaTeX
+\begin{varblock}[\textwidth]{}
+\begin{minipage}[c]{0.5\linewidth}
+\includegraphics[width=0.75\textwidth]{images/Opensource}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.5\linewidth}
+\includegraphics[width=0.9\textwidth]{images/Bruce_perens_13jan09_tacd_MAR_1557x1188.JPG}
+\end{minipage}
+\end{varblock}
+\vspace{-0.4cm}
+\begin{minipage}[c]{0.5\linewidth}
+\tiny \textcolor{gray}{CC-BY Open Source\newline Initiative}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.5\linewidth}
+\tiny \textcolor{gray}{CC-BY-SA Manon\newline Anne Ress}
+\end{minipage}
+#+END_LaTeX
+
+*** FINAL						    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+#+BEGIN_LaTeX
+\begin{tikzpicture}[overlay,line width=0.1cm]
+        \path[->,white] (2.3,3.2) edge (3.3,4);
+        \path[->,white] (8.3,3.2) edge (7.3,4.);
+        \path[<->,white] (5.1,1.8) edge (5.7,1.8);
+\end{tikzpicture}
+#+END_LaTeX
+
+
+** Prevent Backdoors/Cheating
+   
+   Kerckhoffs' principle (cryptography)
+
+*** Kerckhoffs principle					    :B_quote:
+    :PROPERTIES:
+    :BEAMER_env: quote
+    :END:
+    Il faut qu’il n’exige pas le secret, et qu’il puisse sans inconvénient tomber entre les mains de l’ennemi;\\[0.3em]
+
+    \footnotesize (It must not require secrecy, and can without concerns fall into enemy hands.)
+
+#+BEAMER: \vskip1mm \hspace*\fill{\tiny--- Auguste Kerckhoffs, La cryptographie militaire 1883, IX, 5-38, 161-191}
+
+
+    
+*** Information barrier					    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    \vfill
+
+*** "Verification of the Verification"
+#+BEAMER: \begin{center}
+    Inspected \& Inspecting Party can review functionality\\ of Open Source Software
+#+BEAMER: \end{center}
+
+** Increase Participation
+*** Three groups
+#+BEGIN_LaTeX
+    \begin{tabular}{ll}
+    \alert{Verification Experts} & Nuclear Technical community\\
+    \alert{Other Experts} & Academia, technical communities, \\
+    & not related to Arms Control \\
+    \alert{Society} & Public, laypersons \\
+    \end{tabular}
+#+END_LaTeX    
+
+*** Open Source 
+    - \textcolor{black}{enables connection between communities}
+    - \textcolor{black}{verification supported beyond arms control community}
+    - \textcolor{black}{to involve of society, Crowd-Sourcing / Societal Verification}
+
+
+** AAAA My Research 						:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+
+#+BEAMER: \begin{center}
+
+   Work on this issue is part of my PhD project.\\[1em]
+
+   www.nuclearfreesoftware.org \\[3em]
+#+BEAMER: \end{center}
+
+
+\footnotesize
+
+M. Kütt, A. Glaser and M. Englert. "Open Source meets Nuclear Arms Control", In: Proceedings of 55th Annual INMM Meeting, Atlanta, GA, 21-24 July 2014.\\[0.3em]
+
+M. Kütt and M. Englert. "Increased transparency in simulations of measurements for nuclear disarmament verification", In: F. Sevini (Ed.). 35th ESARDA Symposium proceedings, Bruges, 27-30 May 2013.
+
+
+   \pause
+
+\normalsize
+
+\vspace{0.8cm}
+
+#+BEAMER: \begin{center}
+   /Can you imagine to help?/
+#+BEAMER: \end{center}
+
+* Information Barrier
+** Information Barrier						:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+
+#+BEAMER: \begin{center}
+   Hack 2: Information Barrier
+#+BEAMER: \end{center}
+
+
+** Information Barrier
+
+#+BEAMER: \begin{center}
+   Measurement of classified/sensitive physical quantity (e.g. attribute)\\[1.5em]
+#+BEAMER: \end{center}
+
+*** Left							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+#+BEGIN_LaTeX
+\begin{varblock}[\textwidth]{}
+    \includegraphics[width=\textwidth]{images/2013-09-30_na22_3_topline.png}
+\end{varblock}
+\vspace{-0.3cm}
+    \tiny \textcolor{gray}{Public Domain - U.S. DoE NNSA}
+#+END_LaTeX
+
+
+
+*** Right							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+    \includegraphics[width=\textwidth]{images/ib/ib_classified}
+
+** Information Barrier
+
+#+BEAMER: \begin{center}
+   Classified information transformed into unclassified information:
+#+BEAMER: \end{center}
+
+*** Left 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+    Information barrier shows simple information to inspector\\[1.5em]
+    
+    \includegraphics[width=\textwidth]{images/ib/ib_good}
+
+*** Right							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+    But should be able to detect cheating\\[1.5em]
+    \includegraphics[width=\textwidth]{images/ib/ib_bad}
+
+*** No Heading						    :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+#+BEAMER: \begin{center}
+   Typically based on jointly developed hardware/software.
+#+BEAMER: \end{center}
+
+** Development Examples
+
+*** Trilateral Initiative (90s)
+
+    Russia, USA and International Atomic Energy Agency.
+
+    Research mechnologies / methods to verify fissile material coming from nuclear weapons.
+
+*** UK-Norway-Initiative (2010-2015)
+
+    Exercise for verified warhead dismantlement.
+
+    Research: Social issues (inspector / host), development of information barrier.
+    
+
+** Challenges
+*** Left							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+#+BEGIN_LaTeX
+\tcbset{redheight/.style={tcbeamer,valign=center,center upper,notitle,colframe=red!85,equal height group=reds,colback=red!85}}
+\begin{tcolorbox}[redheight]
+{\bf Hardware Verification} \\ (e.g. Hardware Trojans?)
+\end{tcolorbox}
+\begin{tcolorbox}[redheight]
+{\bf Software Verification} \\ (Backdoor / Cheating)
+\end{tcolorbox}
+\visible<3->{
+\begin{tcolorbox}[redheight]
+{\bf Host Provided Hardware} \\ "Warhead" Certified
+\end{tcolorbox}
+\begin{tcolorbox}[redheight]
+{\bf Quality / Validity} \\ of Measurements
+\end{tcolorbox}
+}
+#+END_LaTeX
+
+
+*** Right							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+
+#+BEGIN_LaTeX
+\visible<2->{
+\begin{center}
+Could you trust this system?
+\end{center}
+
+\begin{varblock}[\textwidth]{}
+\includegraphics[width=\textwidth]{images/Raspberry_Pi_Photo.jpg}\\
+\end{varblock}
+\vspace{-0.3cm}
+\tiny \textcolor{gray}{CC-BY-SA cowjuice}
+}
+#+END_LaTeX
+
+
+** Current Research
+
+\footnotesize
+
+J. Fuller. "The functional Requirements and Design Basis for Information Barriers", Report PNNL-13285, Pacific Northwestern National Laboratory, 1999.\\[0.3em]
+
+K. Allen et al. "UK-Norway Initiative (UKNI) approach for the development of a Gamma Ray Attribute Measurement System with an integrated Information Barrier", In: F. Sevini (Ed.), proceedings of 35th ESARDA Symposium proceedings, Bruges, 27-30 May 2013.\\[0.3em]
+
+M. Göttsche and G. Kirchner. "Measurement Techniques for Warhead Authentication with Attributes: Advantages and Limitations," /Science & Global Security/, 22, no. 2, 2014.\\[0.3em]
+
+(more ...)
+
+   
+\pause
+
+\vspace{1cm}
+
+#+BEAMER: \begin{center}
+\emph{Can you imagine to help?}
+#+BEAMER: \end{center}
+
+* Zero-Knowledge
+** Hack 3: Zero-Knowledge Protocol				:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+#+BEAMER: \begin{center}
+   Hack 3: Zero-Knowledge Protocol
+#+BEAMER: \end{center}
+** Basics
+*** Cryptographic protocol
+    - Proof a particular fact
+    - Sound & Complete
+    - without revealing more knowledge
+    
+    Required: *Interaction* between parties
+
+** Distinguishing Drinks
+#+BEAMER: \begin{center}
+Can Bob distinguish two drinks? \\
+\footnotesize Drinks look equal \\
+(e.g. Coca Cola / Fritz Cola, French Wine / Californian Wine)
+#+BEAMER: \end{center}
+
+*** Three cave images						  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :BEAMER_opt: t
+    :END:
+
+**** Step 1 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+\footnotesize 
+Bob tastes each drink and places them in Alice's right and left hand.\\[1cm]
+
+    \includegraphics[width=\textwidth]{images/zkp/step1.pdf}
+
+
+\pause
+
+**** Step 2 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+\footnotesize
+Alice chooses to switch or not switch the cups (secretly).\\[1.3cm]
+
+    \includegraphics[width=\textwidth]{images/zkp/step2.pdf}
+
+\pause
+
+**** Step 3 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :BEAMER_act: <3->
+     :END:
+\footnotesize
+Bob tastes again and tells Alice if she switched.\\[1cm]
+
+\normalsize
+Repeating the game: More confidence in Bob's capabilities.
+
+** Nuclear Disarmament
+
+#+BEAMER: \begin{center}
+Could be used for the Template approach.
+#+BEAMER: \end{center}
+
+\vspace{-0.7cm}
+
+*** Template 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+
+#+BEGIN_LaTeX
+\begin{center}
+    Template
+
+    \includegraphics[width=0.6\textwidth]{images/zkp/template.pdf}
+\end{center}
+#+END_LaTeX
+
+*** Item 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+
+#+BEGIN_LaTeX
+\begin{center}
+    Item
+
+    \includegraphics[width=0.6\textwidth]{images/zkp/item.pdf}
+\end{center}
+#+END_LaTeX
+
+*** Idea (Glaser et al. 2014)
+Proof that templates are equal without revealing anything else\\[0.5em]
+
+   - measurement: neutron radiograph
+   - preload detector with negative image
+   - preload to match predefined result
+   - inspector chooses placement of detector on template and item
+
+
+
+
+** More practical...
+*** Prequel 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+
+\includegraphics[width=\textwidth]{images/zkp/measurement_step1.pdf}
+\vspace{1cm}
+
+\pause
+
+**** Left							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :END:
+\footnotesize Host preloads detectors with "negative image". \normalsize
+
+**** Right							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :END:
+
+\includegraphics[width=\textwidth]{images/zkp/measurement_detectors_host.pdf}
+
+\pause
+
+*** Placement 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.48
+    :END:
+
+\includegraphics[width=\textwidth]{images/zkp/measurement_step2.pdf}
+\vspace{1cm}
+
+**** Left							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :END:
+\footnotesize Inspector does not know preload and places detectors randomly. \normalsize
+
+**** Right							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.48
+     :END:
+
+\includegraphics[width=\textwidth]{images/zkp/measurement_detectors_inspector.pdf}
+
+** Result
+
+After measurement, result is revealed to both inspector and host:
+
+#+BEGIN_LaTeX
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/zkp/measurement_step3.pdf}
+\end{center}
+#+END_LaTeX
+
+** Detectors
+
+#+BEAMER:\begin{center}
+   Detectors could be Non-Electronic Devices
+#+BEAMER:\end{center}
+
+#+BEAMER: \begin{varblock}[\textwidth]{}
+\includegraphics[width=\textwidth]{images/zkp/715781main_vial_XL.jpg}
+#+BEAMER: \end{varblock}
+
+\vspace{-0.7cm}
+\tiny \textcolor{gray}{Public Domain - NASA}
+
+** Current Research
+
+\footnotesize 
+
+A. Glaser, B. Barak and R. J. Goldston, "A New Approach to Nuclear Warhead Verification Using a Zero-Knowledge Protocol", Proceedings of 53rd Annual INMM Meeting, Institute of Nuclear Materials Management, Orlando, Florida, July 15–19, 2012.\\[0.3em]
+
+A. Glaser, B. Barak and R. J. Goldston. "A zero-knowledge protocol for nuclear warhead verification",  /Nature/, 2014, 510, 497-502.\\[0.3em]
+
+
+# \tiny M. Kütt, S. Philippe, B. Barak, A. Glaser, R. J. Goldston, "Authenticating Nuclear Warheads With High Confidence" In: Proceedings of 55th Annual INMM Meeting, Atlanta, GA, 21-24 July 2014.
+
+\pause
+
+\vspace{1cm}
+
+#+BEAMER: \begin{center}
+\emph{Can you imagine to help?}
+#+BEAMER: \end{center}
+
+* Conclusion
+
+** Summary
+
+#+BEGIN_LaTeX
+\begin{center}
+Nuclear Disarmament has relation to computers \& technology.
+\end{center}
+\pause
+#+END_LaTeX
+
+*** Cols							  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :BEAMER_opt: t
+    :END:
+
+**** Free Software 						      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.35
+    :END:
+
+#+BEGIN_LaTeX
+\tcbset{blackheight/.style={tcbeamer,valign=center,equal height group=blacks,notitle,colframe=black,colback=black}}
+\begin{tcolorbox}[blackheight]
+\tiny
+\ttfamily
+\textcolor{white}{while(totalnukes > 0) \{}
+
+\hspace{0.3cm} \textcolor{white}{for(i=1; i<=9; i++) \{}
+
+\hspace{0.6cm} \textcolor{white}{weaponstate[i]->disarm();}
+
+\hspace{0.3cm} \textcolor{white}{\}}
+
+\textcolor{white}{\}}
+\end{tcolorbox}
+#+END_LaTeX
+
+\pause
+
+**** Information Barrier 					      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+BEGIN_LaTeX
+  \tcbset{blackheight/.style={tcbeamer,valign=center,center upper,equal height group=blacks,notitle,colframe=black,colback=black}}
+  \begin{tcolorbox}[blackheight]
+  \includegraphics[width=\textwidth]{images/ib/ib_good}
+  \end{tcolorbox}
+#+END_LATEX
+
+\pause
+
+**** ZKP							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+#+BEGIN_LaTeX
+\tcbset{blackheight/.style={tcbeamer,valign=center,center upper,equal height group=blacks,notitle,colframe=white,colback=black}}
+\begin{tcolorbox}[blackheight]
+    \includegraphics[width=\textwidth]{images/zkp/measurement_step3}
+\end{tcolorbox}
+#+END_LaTeX
+
+\pause
+
+\vspace{0.5cm}
+
+*** Not the only tasks
+\small
+     - Virtual Reality for Training / Testing
+     - Large Sensor Networks
+     - Whistleblowing
+     - ...
+
+** Final							:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+
+#+BEGIN_LaTeX
+\begin{center}
+\Large
+Thanks for listening!\\[1.5em]
+\normalsize
+Contact: moritz@nuclearfreesoftware.org\\[2em]
+(and other: ZNF Hamburg, FIfF, local groups...)
+\end{center}
+#+END_LaTeX
+
+
+* Appendix							 :B_appendix:
+  :PROPERTIES:
+  :BEAMER_env: appendix
+  :END:
+
+** Image References 1
+
+#+BEGIN_LaTeX
+   \fontsize{3pt}{3.6}\selectfont
+
+   \textcolor{gray}{In order of appearance, own work not listed}\\[0.5em]
+
+   CC-BY-SA Nanking2012 (Arak reactor): Creative Commons-Attribution-Share Alike, Nanking 2012, \url{http://commons.wikimedia.org/wiki/File:Arak_Heavy_Water4.JPG}, downloaded 2014-07-16 \\[0.3em]
+
+   CC-BY-SA Stefan-XP / Wikimedia Commons (Nuclear Fission): http://commons.wikimedia.org/wiki/File:Kernspaltung.svg, downloaded 2014-08-29 \\[0.3em]
+
+   CC-BY-SA Wikimedia Commons (Nuclear chain reaction): http://commons.wikimedia.org/wiki/File:Kettenreaktion.svg, downloaded 2014-08-29\\[0.3em]
+
+   Public Domain / Wikimedia Commons - modified (Gun-type weapon): \url{http://en.wikipedia.org/wiki/File:Fission_bomb_assembly_methods.svg}, downloaded 2014-08-18\\[0.3em]
+
+   Public Domain / Wikimedia Commons - modified (Implosion type weapon): \url{http://en.wikipedia.org/wiki/File:Implosion_nuclear_weapon_design_-_shock_waves.svg}, downloaded 2014-08-29\\[0.3em]
+
+   CC-BY-SA Sajak (AfE Tower Blasting), Sven-Sebastian Sajak, \url{http://upload.wikimedia.org/wikipedia/commons/2/23/140202_Afe-Tower_Blasting.jpg}, downloaded 2014-08-25\\[0.3em]
+
+   CC-BY-SA Robock et. al 2007 (Nuclear Winter), Robock, A.; Oman, L.; Stenchikov, G. L.; Toon, O. B.; Bardeen, C. and Turco, R. P. Climatic consequences of regional nuclear conflicts - Figure 5 Atmospheric Chemistry and Physics, 2007, 7, 2003-2012. (\url{http://www.atmos-chem-phys.net/7/2003/2007/}, downloaded 2014-08-28).\\[0.3em]
+
+   CC-BY-SA Stahlkocher (Airbase Büchel), \url{http://commons.wikimedia.org/wiki/File:B\%C3\%BCchel_Fliegerhorst.jpg}, downloaded 2014-09-01.\\[0.3em]
+
+   Public Domain, U.S. DoD (B61 bombs), United States Department of Defense (SSGT Phil Schmitten), \url{http://de.wikipedia.org/wiki/Datei:B-61_bomb_rack.jpg}, downloaded 2014-08-22.\\[0.3em]
+
+   CC-BY-NC IPFM, Global Fissile Material Report 2009, International Panel on Fissile Materials, Princeton, 2009, p. 67.\\[0.3em]
+#+END_LATEX
+
+** Image References 2						   
+
+#+BEGIN_LaTeX
+   \fontsize{3pt}{3.6}\selectfont
+
+   Public Domain - FSF (Free Software Foundation Logo), \url{http://commons.wikimedia.org/wiki/File:Free_Software_Foundation_logo_and_wordmark.svg}, downloaded 2014-07-07.\\[0.3em]
+
+   CC-BY-SA NicoBZH (portrait of Richard Stallman), NicoBZH from Saint Etienne - Loire, France, \url{http://commons.wikimedia.org/wiki/File:NicoBZH_-_Richard_Stallman_\%28by-sa\%29_\%285\%29.jpg}, downloaded 2014-07-07.\\[0.3em]
+
+   CC-BY Open Source Initiative (OSI Logo), \url{http://commons.wikimedia.org/wiki/File:Opensource.svg}, downloaded 2014-07-07.\\[0.3em]
+
+   CC-BY-SA Manon Anne Ress (portrait of Bruce Perens): \url{http://commons.wikimedia.org/wiki/File:Bruce_perens_13jan09_tacd_MAR_1557x1188.JPG}, downloaded 2014-07-07.\\[0.3em]
+
+   Public Domain - U.S. DoE NNSA (Warhead Measurement Campaing), U.S. Department of Energy - National Nuclear Security Administration, \url{http://nnsa.energy.gov/sites/default/files/imagecache/feature_photo_689w_249h/nnsa/09-13-featurephoto/2013-09-30\%20na22\%203\%20topline.PNG}, downloaded 2014-09-01.\\[0.3em]
+
+   CC-BY-SA Cowjuice - Wikimedia Commons (Raspberry Pi), \url{http://commons.wikimedia.org/wiki/File:Raspberry_Pi_Photo.jpg}, downloaded 2014-09-01.\\[0.3em]
+
+
+   Public Domain - NASA (Bubble Detectors), \url{http://www.nasa.gov/images/content/715781main_vial_XL.jpg}, downloaded 2014-08-29.\\[0.3em]
+
+
+#+END_LaTeX
+
+
+
+
+** Blank							:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+
+** Effects of a nuclear explosion
+   :PROPERTIES:
+   :END:
+*** Thermal radiation					       :B_alertblock:
+    :PROPERTIES:
+    :BEAMER_env: alertblock
+    :END:
+
+    "Spontaneous" ignition of items, firestorm, burns.
+
+*** Blast / pressure wave				       :B_alertblock:
+    :PROPERTIES:
+    :BEAMER_env: alertblock
+    :END:
+    
+    Destruction of buildings and debris production.
+
+    Similar to conventional weapons, but more intense.
+
+*** Radiation (direct / indirect)			       :B_alertblock:
+    :PROPERTIES:
+    :BEAMER_env: alertblock
+    :END:
+    Direct radiation from neutron / gamma emitted in reaction.
+
+    Indirect radiation (later) from activated debris.
+
+** Effects of nuclear weapons
+
+#+BEAMER: \begin{center}
+Footage:
+
+US test series: Upshot-Knothole
+
+March 17, 1953
+
+Explosion Annie (on tower)
+#+BEAMER: \end{center}
+
+#+BEGIN_LaTeX
+\begin{tikzpicture}[remember picture,overlay]
+    {{\uncover<2->{\node [line width=1mm, draw=black, inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/01.jpg}};}}};
+    {{\uncover<3->{\node [line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/02.jpg}};}}};
+    {{\uncover<4->{\node [line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/03.jpg}};}}};
+    {{\uncover<5->{\node [line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/04.jpg}};}}};
+    {{\uncover<6->{\node [line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/05.jpg}};}}};
+    {{\uncover<7->{\node [line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/06.jpg}};}}};
+    {{\uncover<8->{\node [line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/07.jpg}};}}};
+    {{\uncover<9->{\node [line width=1mm, draw=black,inner sep=0pt] at (current page.center) {\includegraphics[width=12cm]{images/upshot_knothole/08.jpg}};}}};
+   {{\uncover<2->{\node [shift={(-3.3cm, -3.8cm)}, fill=white, line width=1mm, draw=white,inner sep=0pt] at (current page.center) {\tiny \textcolor{gray}{Public Domain, U.S. DoE - Nevada Field Office}};}}};
+\end{tikzpicture}
+#+END_LaTeX
+
+
+** Examples for Software Use
+   :PROPERTIES:
+   :END:
+
+#+BEGIN_LATEX
+\begin{table}[htb]
+\fontsize{7pt}{8.4}\selectfont
+\begin{center}
+\begin{tabularx}{\textwidth}{>{\bf}RLLLL}
+\toprule
+  & \bf Non-Proliferation / Safeguards  & \bf Fissile Material Cutoff Treaty  & \bf Nuclear Disarmament Agreement  \\
+\toprule
+ Particle Transport (Stochastic/ Deterministic) & Development of NDA methods for fresh/spent fuel analysis & Development of NDA methods for material analysis   & Development of NDA methods for warhead authentication \\
+\midrule
+ Depletion Calculations & Proliferation potential of reactors  & Estimate past/current fissile material production capabilities & Fission product tagging for warhead identification \\
+\midrule
+ Spectrum Analysis & Identify items (spent/fresh fuel), determine material compositions & Identify items (spent/fresh fuel), determine material compositions & Identify items (warheads) and respective material compositions \\
+% \midrule
+%  Correlation Analysis & Neutron Correlation/Multiplicity measurements for Pu-mass estimates &  &   & Neutron Correlation/Multiplicity Measurements for Pu-mass estimates \\
+% \midrule
+%  Atmospheric Transport Modeling & Kr-85 detection (clandestine reprocessing) & Radionuclide detection & Kr-85 detection  &   \\
+% \midrule
+% Fuel Cycle Simulation & Material Balancing and Accounting & & Material Balancing \& Accounting, Past Fissile Material Production &  \\
+% \midrule
+% Fluid Dynamics & Isotope Separation Modeling & Enrichment Cascade Analysis & & Nuclear Archaeology  \\
+%  Waveform Analysis &   & Discriminate Explosion and Earthquake &   &   \\
+% \midrule
+%  Image Identification & Find clandestine facilities  &  & Finding clandestine facilities  &   \\
+% \midrule
+%  Image Change Detection & Find clandestine facilities, track operational status of existing ones & Detect crater / sinkings after explosions & check operational status of facilities  & Warhead Chain-of-custody  \\
+% \midrule
+%  Geographic Information System & Combine data from different sources  & Reconstruct possible locations of explosions &   &   \\
+% \midrule
+% Virtual Realities & Inspector Training, Data visualization & Training for On-Site Inspections & & Improvement of verification process \\
+% \midrule
+%  General Purpose Data Analysis & Visualize/edit complex data-sets  & Visualize/edit complex data-sets & Visualize/edit complex data-sets  & Visualize/edit complex data-sets  \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\label{tab:fields}
+\end{table}
+#+END_LATEX
+
+#+BEAMER: \begin{center}
+\textcolor{gray!50}{\scriptsize (Extensive table in M. Kütt, A. Glaser, M. Englert: Open Source meets Nuclear Arms Control, in proceedings of 55th Annual INMM Meeting, Atlanta, GA, 21-24 July 2014)}
+#+BEAMER: \end{center}
+
+** Safecast
+   :PROPERTIES:
+   :END:
+\vspace{-0.5cm}
+*** bGeigie							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+#+BEGIN_LaTeX
+\begin{varblock}[\textwidth]{}
+\includegraphics[width=\textwidth]{images/bgeigie_IMG_0009.jpeg}\\
+bGeigie nano
+\end{varblock}
+\vspace{-0.3cm}
+\tiny \textcolor{gray}{CC-BY Safecast}
+#+END_LaTeX
+
+*** map 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+#+BEGIN_LaTeX
+\begin{varblock}[\textwidth]{}
+\includegraphics[width=\textwidth]{images/safecast_japan_crop.jpg}\\
+Measurements in Japan
+\end{varblock}
+\vspace{-0.3cm}
+\tiny \textcolor{gray}{CC-BY Safecast}
+#+END_LaTeX
+
+
+** Appendix Image References
+
+#+BEGIN_LaTeX
+   \fontsize{3pt}{3.6}\selectfont
+
+   Public Domain - U.S. DoE Nevada Field Office (Test Upshot-Knothole), \url{http://www.nv.doe.gov/library/photos/upshot.aspx}, downloaded 2013-08-10.\\[0.3em]
+
+   CC-BY Safecast (bGeigie nano): Creative Commons-Attribution, Safecast Project, \url{http://blog.safecast.org/wp-content/uploads/2013/03/IMG_0009.jpeg}, downloaded 2014-07-25.\\[0.3em]
+
+   CC-BY Safecast (Japan Map): Creative Commons-Attribution, Safecast Project, \url{http://blog.safecast.org/wp-content/uploads/2014/05/980x480.jpg}, downloaded 2014-07-25 (cutout).\\[0.3em]
+
+
+#+END_LaTeX
+** CC Long							:B_fullframe:
+   :PROPERTIES:
+   :BEAMER_env: fullframe
+   :END:
+
+#+BEAMER: \begin{center}
+
+\includegraphics[width=0.2\textwidth]{by-nc-sa_eu.png}
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+#+BEAMER: \end{center}
+
+
